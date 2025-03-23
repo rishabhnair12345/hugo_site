@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -11,13 +11,13 @@
     
     <meta name="robots" content="index, follow">
     
+    <!-- Custom CSS -->
+    {{ $styles := resources.Get "css/custom.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}">
     
-    
-    <link rel="stylesheet" href="http://localhost:1313/css/custom.min.d0ece4045a17c9241838f16c79fe75d0d91072324882503d2d1cafb79fadf85d.css">
-    
-    
-    
-    <script src="http://localhost:1313/js/custom.min.1aa3a41a9e2e423cce1dec52b46fbc309b3e3f650aee7d2c72cc42265fa7882e.js" defer></script>
+    <!-- Custom JS -->
+    {{ $scripts := resources.Get "js/custom.js" | minify | fingerprint }}
+    <script src="{{ $scripts.Permalink }}" defer></script>
     
     <link rel="canonical" href="https://example.org/">
     
